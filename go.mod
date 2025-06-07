@@ -3,7 +3,7 @@ module github.com/localzet/aura
 go 1.24
 
 require (
-	github.com/OmarTariq612/goech v0.0.0-20240405204721-8e2e1dafd3a0
+	github.com/OmarTariq612/goech v0.0.1
 	github.com/cloudflare/circl v1.6.1
 	github.com/ghodss/yaml v1.0.1-0.20220118164431-d8423dcdf344
 	github.com/golang/mock v1.7.0-rc.1
@@ -15,7 +15,7 @@ require (
 	github.com/quic-go/quic-go v0.52.0
 	github.com/refraction-networking/utls v1.7.3
 	github.com/sagernet/sing v0.6.11
-	github.com/sagernet/sing-shadowsocks v0.2.7
+	github.com/sagernet/sing-shadowsocks v0.2.8
 	github.com/seiflotfy/cuckoofilter v0.0.0-20240715131351-a2f2c23f1771
 	github.com/stretchr/testify v1.10.0
 	github.com/v2fly/ss-bloomring v0.0.0-20210312155135-28617310f63e

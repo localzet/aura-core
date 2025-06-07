@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package aura.transport.internet.headers.dns;
+option csharp_namespace = "Aura.Transport.Internet.Headers.DNS";
+option go_package = "github.com/localzet/aura/transport/internet/headers/dns";
+option java_package = "com.aura.transport.internet.headers.dns";
+option java_multiple_files = true;
+
+message Config {
+    string domain = 1;
+}
+

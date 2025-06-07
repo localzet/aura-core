@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package aura.transport.internet.httpupgrade;
+option csharp_namespace = "Aura.Transport.Internet.HttpUpgrade";
+option go_package = "github.com/localzet/aura/transport/internet/httpupgrade";
+option java_package = "com.aura.transport.internet.httpupgrade";
+option java_multiple_files = true;
+
+message Config {
+  string host = 1;
+  string path = 2;
+  map<string, string> header = 3;
+  bool accept_proxy_protocol = 4;
+  uint32 ed = 5;
+}

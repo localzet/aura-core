@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package aura.core.app.observatory.command;
+option csharp_namespace = "Aura.Core.App.Observatory.Command";
+option go_package = "github.com/localzet/aura/app/observatory/command";
+option java_package = "com.aura.core.app.observatory.command";
+option java_multiple_files = true;
+
+import "app/observatory/config.proto";
+
+message GetOutboundStatusRequest {
+}
+
+message GetOutboundStatusResponse {
+  aura.core.app.observatory.ObservationResult status = 1;
+}
+
+service ObservatoryService {
+  rpc GetOutboundStatus(GetOutboundStatusRequest)
+      returns (GetOutboundStatusResponse) {}
+}
+
+
+message Config {}

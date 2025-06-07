@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package aura.common.net;
+option csharp_namespace = "Aura.Common.Net";
+option go_package = "github.com/localzet/aura/common/net";
+option java_package = "com.aura.common.net";
+option java_multiple_files = true;
+
+import "common/net/network.proto";
+import "common/net/address.proto";
+
+// Endpoint of a network connection.
+message Endpoint {
+  Network network = 1;
+  IPOrDomain address = 2;
+  uint32 port = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package aura.transport.internet.headers.wireguard;
+option csharp_namespace = "Aura.Transport.Internet.Headers.Wireguard";
+option go_package = "github.com/localzet/aura/transport/internet/headers/wireguard";
+option java_package = "com.aura.transport.internet.headers.wireguard";
+option java_multiple_files = true;
+
+message WireguardConfig {}

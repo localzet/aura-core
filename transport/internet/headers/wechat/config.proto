@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package aura.transport.internet.headers.wechat;
+option csharp_namespace = "Aura.Transport.Internet.Headers.Wechat";
+option go_package = "github.com/localzet/aura/transport/internet/headers/wechat";
+option java_package = "com.aura.transport.internet.headers.wechat";
+option java_multiple_files = true;
+
+message VideoConfig {}

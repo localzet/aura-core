@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package aura.proxy.dokodemo;
+option csharp_namespace = "Aura.Proxy.Dokodemo";
+option go_package = "github.com/localzet/aura/proxy/dokodemo";
+option java_package = "com.aura.proxy.dokodemo";
+option java_multiple_files = true;
+
+import "common/net/address.proto";
+import "common/net/network.proto";
+
+message Config {
+  aura.common.net.IPOrDomain address = 1;
+  uint32 port = 2;
+
+  // List of networks that the Dokodemo accepts.
+  repeated aura.common.net.Network networks = 7;
+
+  bool follow_redirect = 5;
+  uint32 user_level = 6;
+}

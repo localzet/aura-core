@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package aura.app.dispatcher;
+option csharp_namespace = "Aura.App.Dispatcher";
+option go_package = "github.com/localzet/aura/app/dispatcher";
+option java_package = "com.aura.app.dispatcher";
+option java_multiple_files = true;
+
+message SessionConfig {
+  reserved 1;
+}
+
+message Config {
+  SessionConfig settings = 1;
+}

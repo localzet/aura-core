@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package aura.common.serial;
+option csharp_namespace = "Aura.Common.Serial";
+option go_package = "github.com/localzet/aura/common/serial";
+option java_package = "com.aura.common.serial";
+option java_multiple_files = true;
+
+// TypedMessage is a serialized proto message along with its type name.
+message TypedMessage {
+  // The name of the message type, retrieved from protobuf API.
+  string type = 1;
+  // Serialized proto message.
+  bytes value = 2;
+}

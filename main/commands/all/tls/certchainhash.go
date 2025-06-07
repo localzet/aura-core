@@ -1,0 +1,40 @@
+package tls
+
+import (
+	"flag"
+	"fmt"
+	"os"
+
+	"github.com/localzet/aura/main/commands/base"
+	"github.com/localzet/aura/transport/internet/tls"
+)
+
+var cmdCertChainHash = &base.Command{
+	UsageLine: "{{.Exec}} certChainHash",
+	Short:     "Calculate TLS certificates hash.",
+	Long: `
+	aura tls certChainHash --cert <cert.pem>
+	Calculate TLS certificate chain hash.
+	`,
+}
+
+func init() {
+	cmdCertChainHash.Run = executeCertChainHash // break init loop
+}
+
+var input = cmdCertChainHash.Flag.String("cert", "fullchain.pem", "The file path of the certificates chain")
+
+func executeCertChainHash(cmd *base.Command, args []string) {
+	fs := flag.NewFlagSet("certChainHash", flag.ContinueOnError)
+	if err := fs.Parse(args); err != nil {
+		fmt.Println(err)
+		return
+	}
+	certContent, err := os.ReadFile(*input)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	certChainHashB64 := tls.CalculatePEMCertChainSHA256Hash(certContent)
+	fmt.Println(certChainHashB64)
+}

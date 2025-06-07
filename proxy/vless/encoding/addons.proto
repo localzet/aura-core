@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package aura.proxy.vless.encoding;
+option csharp_namespace = "Aura.Proxy.Vless.Encoding";
+option go_package = "github.com/localzet/aura/proxy/vless/encoding";
+option java_package = "com.aura.proxy.vless.encoding";
+option java_multiple_files = true;
+
+message Addons {
+  string Flow = 1;
+  bytes Seed = 2;
+}

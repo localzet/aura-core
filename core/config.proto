@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package aura.core;
+option csharp_namespace = "Aura.Core";
+option go_package = "github.com/localzet/aura/core";
+option java_package = "com.aura.core";
+option java_multiple_files = true;
+
+import "common/serial/typed_message.proto";
+
+// Config is the master config of Aura. Aura takes this config as input and
+// functions accordingly.
+message Config {
+  // Inbound handler configurations. Must have at least one item.
+  repeated InboundHandlerConfig inbound = 1;
+
+  // Outbound handler configurations. Must have at least one item. The first
+  // item is used as default for routing.
+  repeated OutboundHandlerConfig outbound = 2;
+
+  reserved 3;
+
+  // App is for configurations of all features in Aura. A feature must
+  // implement the Feature interface, and its config type must be registered
+  // through common.RegisterConfig.
+  repeated aura.common.serial.TypedMessage app = 4;
+
+  // Configuration for extensions. The config may not work if corresponding
+  // extension is not loaded into Aura. Aura will ignore such config during
+  // initialization.
+  repeated aura.common.serial.TypedMessage extension = 6;
+}
+
+// InboundHandlerConfig is the configuration for inbound handler.
+message InboundHandlerConfig {
+  // Tag of the inbound handler. The tag must be unique among all inbound
+  // handlers
+  string tag = 1;
+  // Settings for how this inbound proxy is handled.
+  aura.common.serial.TypedMessage receiver_settings = 2;
+  // Settings for inbound proxy. Must be one of the inbound proxies.
+  aura.common.serial.TypedMessage proxy_settings = 3;
+}
+
+// OutboundHandlerConfig is the configuration for outbound handler.
+message OutboundHandlerConfig {
+  // Tag of this outbound handler.
+  string tag = 1;
+  // Settings for how to dial connection for this outbound handler.
+  aura.common.serial.TypedMessage sender_settings = 2;
+  // Settings for this outbound proxy. Must be one of the outbound proxies.
+  aura.common.serial.TypedMessage proxy_settings = 3;
+  // If not zero, this outbound will be expired in seconds. Not used for now.
+  int64 expire = 4;
+  // Comment of this outbound handler. Not used for now.
+  string comment = 5;
+}

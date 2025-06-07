@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package aura.transport.internet.websocket;
+option csharp_namespace = "Aura.Transport.Internet.Websocket";
+option go_package = "github.com/localzet/aura/transport/internet/websocket";
+option java_package = "com.aura.transport.internet.websocket";
+option java_multiple_files = true;
+
+message Config {
+  string host = 1;
+  string path = 2; // URL path to the WebSocket service. Empty value means root(/).
+  map<string, string> header = 3;
+  bool accept_proxy_protocol = 4;
+  uint32 ed = 5;
+  uint32 heartbeatPeriod = 6;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package aura.transport.internet.headers.noop;
+option csharp_namespace = "Aura.Transport.Internet.Headers.Noop";
+option go_package = "github.com/localzet/aura/transport/internet/headers/noop";
+option java_package = "com.aura.transport.internet.headers.noop";
+option java_multiple_files = true;
+
+message Config {}
+
+message ConnectionConfig {}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package aura.proxy.vless.outbound;
+option csharp_namespace = "Aura.Proxy.Vless.Outbound";
+option go_package = "github.com/localzet/aura/proxy/vless/outbound";
+option java_package = "com.aura.proxy.vless.outbound";
+option java_multiple_files = true;
+
+import "common/protocol/server_spec.proto";
+
+message Config {
+  repeated aura.common.protocol.ServerEndpoint vnext = 1;
+}

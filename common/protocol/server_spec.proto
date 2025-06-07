@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package aura.common.protocol;
+option csharp_namespace = "Aura.Common.Protocol";
+option go_package = "github.com/localzet/aura/common/protocol";
+option java_package = "com.aura.common.protocol";
+option java_multiple_files = true;
+
+import "common/net/address.proto";
+import "common/protocol/user.proto";
+
+message ServerEndpoint {
+  aura.common.net.IPOrDomain address = 1;
+  uint32 port = 2;
+  repeated aura.common.protocol.User user = 3;
+}

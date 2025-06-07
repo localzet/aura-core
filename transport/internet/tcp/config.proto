@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package aura.transport.internet.tcp;
+option csharp_namespace = "Aura.Transport.Internet.Tcp";
+option go_package = "github.com/localzet/aura/transport/internet/tcp";
+option java_package = "com.aura.transport.internet.tcp";
+option java_multiple_files = true;
+
+import "common/serial/typed_message.proto";
+
+message Config {
+  reserved 1;
+  aura.common.serial.TypedMessage header_settings = 2;
+  bool accept_proxy_protocol = 3;
+}

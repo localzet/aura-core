@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package aura.transport.internet.udp;
+option csharp_namespace = "Aura.Transport.Internet.Udp";
+option go_package = "github.com/localzet/aura/transport/internet/udp";
+option java_package = "com.aura.transport.internet.udp";
+option java_multiple_files = true;
+
+message Config {}

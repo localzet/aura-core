@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package aura.transport.internet.headers.tls;
+option csharp_namespace = "Aura.Transport.Internet.Headers.Tls";
+option go_package = "github.com/localzet/aura/transport/internet/headers/tls";
+option java_package = "com.aura.transport.internet.headers.tls";
+option java_multiple_files = true;
+
+message PacketConfig {}

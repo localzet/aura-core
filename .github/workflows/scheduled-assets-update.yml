@@ -32,7 +32,7 @@ jobs:
 
       - name: Update Geodat
         id: update
-        uses: nick-fields/retry@v3
+        uses: nick-fields/retry@v4
         with:
           timeout_minutes: 60
           retry_wait_seconds: 60
